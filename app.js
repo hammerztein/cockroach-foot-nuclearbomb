@@ -15,8 +15,8 @@ function getComputerChoice() {
 
 // Play one round of the game
 function playRound(playerChoice, computerChoice) {
-	// convert playerChoice to lower case string
-	const userChoice = playerChoice.toLowerCase();
+	// convert playerChoice to lower case string and replace whitespaces with hyphen (i.e 'nuclear bomb' > 'nuclear-bomb')
+	const userChoice = playerChoice.toLowerCase().replace(/\s/g, '-');
 	if (
 		// player winning conditions
 		(userChoice === 'cockroach' && computerChoice === 'nuclear-bomb') ||
