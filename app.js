@@ -16,45 +16,47 @@ function getComputerChoice() {
 // Play one round of the game
 function playRound(playerChoice, computerChoice) {
 	// convert playerChoice to lower case string and replace whitespaces with hyphen (i.e 'nuclear bomb' > 'nuclear-bomb')
-	const userChoice = playerChoice.toLowerCase().replace(/\s/g, '-');
+	const playerChoiceFormatted = playerChoice.toLowerCase().replace(/\s/g, '-');
 	if (
 		// player winning conditions
-		(userChoice === 'cockroach' && computerChoice === 'nuclear-bomb') ||
-		(userChoice === 'nuclear-bomb' && computerChoice === 'foot') ||
-		(userChoice === 'foot' && computerChoice === 'cockroach')
+		(playerChoiceFormatted === 'cockroach' &&
+			computerChoice === 'nuclear-bomb') ||
+		(playerChoiceFormatted === 'nuclear-bomb' && computerChoice === 'foot') ||
+		(playerChoiceFormatted === 'foot' && computerChoice === 'cockroach')
 	) {
 		// increment player score by one
 		playerScore++;
 		// return winning text
-		return `You Win! (Player: ${playerScore}) ${userChoice} beats (AI: ${aiScore}) ${computerChoice}`;
+		return `You Win! (Player: ${playerScore}) ${playerChoiceFormatted} beats (AI: ${aiScore}) ${computerChoice}`;
 	} else if (
 		// AI winning conditions
-		(userChoice === 'cockroach' && computerChoice === 'foot') ||
-		(userChoice === 'nuclear-bomb' && computerChoice === 'cockroach') ||
-		(userChoice === 'foot' && computerChoice === 'nuclear-bomb')
+		(playerChoiceFormatted === 'cockroach' && computerChoice === 'foot') ||
+		(playerChoiceFormatted === 'nuclear-bomb' &&
+			computerChoice === 'cockroach') ||
+		(playerChoiceFormatted === 'foot' && computerChoice === 'nuclear-bomb')
 	) {
 		// increment AI score by one
 		aiScore++;
 		// return winning text
-		return `AI Wins! (AI: ${aiScore}) ${computerChoice} beats (Player: ${playerScore}) ${userChoice}`;
+		return `AI Wins! (AI: ${aiScore}) ${computerChoice} beats (Player: ${playerScore}) ${playerChoiceFormatted}`;
 	} else {
 		// anything else is a draw
-		return `It's a draw! (Player: ${playerScore}) ${userChoice} and (AI: ${aiScore}) ${computerChoice} are the same.`;
+		return `It's a draw! (Player: ${playerScore}) ${playerChoiceFormatted} and (AI: ${aiScore}) ${computerChoice} are the same.`;
 	}
 }
 
 // Game loop
 function playGame() {
 	// get user choice
-	const userChoice = prompt(
+	const playerChoice = prompt(
 		"Please input your selection:  'Cockroach' 'Foot' or 'Nuclear-Bomb'! ",
 	);
 	// play 5 rounds based on a user input and log out results
-	console.log(playRound(userChoice, getComputerChoice()));
-	console.log(playRound(userChoice, getComputerChoice()));
-	console.log(playRound(userChoice, getComputerChoice()));
-	console.log(playRound(userChoice, getComputerChoice()));
-	console.log(playRound(userChoice, getComputerChoice()));
+	console.log(playRound(playerChoice, getComputerChoice()));
+	console.log(playRound(playerChoice, getComputerChoice()));
+	console.log(playRound(playerChoice, getComputerChoice()));
+	console.log(playRound(playerChoice, getComputerChoice()));
+	console.log(playRound(playerChoice, getComputerChoice()));
 }
 
 // Initialize gameplay loop
