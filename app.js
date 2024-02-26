@@ -26,7 +26,7 @@ function playRound(playerChoice, computerChoice) {
 		// increment player score by one
 		playerScore++;
 		// return winning text
-		return `You Win! ${userChoice} beats ${computerChoice}`;
+		return `You Win! (Player) ${userChoice} beats (AI) ${computerChoice}`;
 	} else if (
 		// AI winning conditions
 		(userChoice === 'cockroach' && computerChoice === 'foot') ||
@@ -36,10 +36,10 @@ function playRound(playerChoice, computerChoice) {
 		// increment AI score by one
 		aiScore++;
 		// return winning text
-		return `AI Wins! ${computerChoice} beats ${userChoice}`;
+		return `AI Wins! (AI) ${computerChoice} beats (Player) ${userChoice}`;
 	} else {
 		// anything else is a draw
-		return `It's a draw! ${userChoice} and ${computerChoice} are the same.`;
+		return `It's a draw! (Player) ${userChoice} and (AI) ${computerChoice} are the same.`;
 	}
 }
 
@@ -49,10 +49,12 @@ function playGame() {
 	const userChoice = prompt(
 		"Please input your selection:  'Cockroach' 'Foot' or 'Nuclear-Bomb'! ",
 	);
-	// play 5 rounds based on a user input
+	// play 5 rounds based on a user input and log out results
 	console.log(playRound(userChoice, getComputerChoice()));
 	console.log(playRound(userChoice, getComputerChoice()));
 	console.log(playRound(userChoice, getComputerChoice()));
 	console.log(playRound(userChoice, getComputerChoice()));
 	console.log(playRound(userChoice, getComputerChoice()));
 }
+
+playGame();
