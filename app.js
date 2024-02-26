@@ -17,7 +17,6 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) {
 	// convert playerChoice to lower case string
 	const userChoice = playerChoice.toLowerCase();
-
 	if (
 		// player winning conditions
 		(userChoice === 'cockroach' && computerChoice === 'nuclear-bomb') ||
@@ -44,6 +43,16 @@ function playRound(playerChoice, computerChoice) {
 	}
 }
 
-console.log(playRound('cockroach', getComputerChoice()));
-console.log(playRound('foot', getComputerChoice()));
-console.log(playRound('nuclear-bomb', getComputerChoice()));
+// Game loop
+function playGame() {
+	// get user choice
+	const userChoice = prompt(
+		"Please input your selection:  'Cockroach' 'Foot' or 'Nuclear-Bomb'! ",
+	);
+	// play 5 rounds based on a user input
+	console.log(playRound(userChoice, getComputerChoice()));
+	console.log(playRound(userChoice, getComputerChoice()));
+	console.log(playRound(userChoice, getComputerChoice()));
+	console.log(playRound(userChoice, getComputerChoice()));
+	console.log(playRound(userChoice, getComputerChoice()));
+}
