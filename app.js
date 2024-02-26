@@ -26,7 +26,7 @@ function playRound(playerChoice, computerChoice) {
 		// increment player score by one
 		playerScore++;
 		// return winning text
-		return `You Win! (Player) ${userChoice} beats (AI) ${computerChoice}`;
+		return `You Win! (Player: ${playerScore}) ${userChoice} beats (AI: ${aiScore}) ${computerChoice}`;
 	} else if (
 		// AI winning conditions
 		(userChoice === 'cockroach' && computerChoice === 'foot') ||
@@ -36,10 +36,10 @@ function playRound(playerChoice, computerChoice) {
 		// increment AI score by one
 		aiScore++;
 		// return winning text
-		return `AI Wins! (AI) ${computerChoice} beats (Player) ${userChoice}`;
+		return `AI Wins! (AI: ${aiScore}) ${computerChoice} beats (Player: ${playerScore}) ${userChoice}`;
 	} else {
 		// anything else is a draw
-		return `It's a draw! (Player) ${userChoice} and (AI) ${computerChoice} are the same.`;
+		return `It's a draw! (Player: ${playerScore}) ${userChoice} and (AI: ${aiScore}) ${computerChoice} are the same.`;
 	}
 }
 
@@ -57,4 +57,5 @@ function playGame() {
 	console.log(playRound(userChoice, getComputerChoice()));
 }
 
+// Initialize gameplay loop
 playGame();
