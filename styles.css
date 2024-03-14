@@ -1,0 +1,33 @@
+/* Reset styling */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; /* include padding and border into elements total sizing */
+}
+
+a {
+	text-decoration: none;
+	color: inherit; /* inherit color from parent element */
+}
+
+button {
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Roboto';
+	color: #555;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
