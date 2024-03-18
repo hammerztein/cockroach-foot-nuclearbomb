@@ -24,10 +24,10 @@ img {
 }
 
 body {
-	line-height: 1.4;
+	line-height: 1.5;
 	height: 100vh;
 	font-family: 'Roboto';
-	color: #bbb;
+	color: #ddd;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -35,6 +35,7 @@ body {
 }
 
 /* main content */
+
 .container {
 	width: 800px;
 	min-height: 450px;
@@ -53,15 +54,22 @@ body {
 	flex: 1;
 }
 
+/* heading */
+
 .heading {
 	text-align: center;
-	padding: 0 25px;
+	padding: 0 20px;
 }
 
 .heading h1 {
-	color: #ddd;
 	margin-bottom: 8px;
 }
+
+.info {
+	color: #bbb;
+}
+
+/* buttons */
 
 .buttons {
 	flex: 2;
@@ -69,14 +77,13 @@ body {
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 16px;
-	padding: 12px 0;
+	margin: 25px 0;
 }
 
 .btn {
 	max-width: 128px;
 	max-height: 128px;
 	background-color: #465a76;
-	border: 1px solid #0a264c;
 	padding: 12px;
 	border-radius: 8px;
 	transition: all 0.3s ease;
@@ -85,4 +92,63 @@ body {
 .btn:hover {
 	transform: scale(1.05);
 	box-shadow: 0px 0px 10px 2px #465a76;
+}
+
+/* output */
+
+.output {
+	padding: 0 20px;
+}
+
+#outcome {
+	text-align: center;
+	font-size: 22px;
+}
+
+.selection,
+.scores {
+	display: flex;
+	align-items: center;
+	margin: 15px 0;
+}
+
+.text,
+.progress label {
+	flex: 1;
+	font-size: 18px;
+	text-align: center;
+}
+
+.progress label,
+.progress progress {
+	display: block;
+}
+
+progress {
+	width: 75%;
+	height: 25px;
+	margin: 10px auto;
+	border-radius: 10px;
+	position: relative;
+}
+
+progress::after {
+	content: attr(data-value);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 18px;
+}
+
+progress::-webkit-progress-bar {
+	background-color: #1f406d;
+	border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+	background-color: #3771c2;
+	border-radius: 10px;
 }
