@@ -19,18 +19,59 @@ function getComputerSelection() {
 	return choices[indexOfChoice];
 }
 
-// Get player selection
-function getPlayerSelection(e) {
-	gameData.playerSelection = e.currentTarget.dataset.value;
-	playRound(gameData.playerSelection, gameData.computerSelection);
-}
-
 // Play one round of the game
-function playRound(playerChoice, computerChoice) {}
+function playRound(e) {
+	// Rounds check
+	if (gameData.currentRound === gameData.maxRound) {
+		gameData.outcome += ', Game Over!';
+		// make game reset button visible
+		return;
+	}
+
+	// Set player and computer selections
+	gameData.playerSelection = e.currentTarget.dataset.value;
+	gameData.computerSelection = getComputerSelection();
+
+	// Draw conditions
+	if (gameData.playerSelection === gameData.computerSelection) {
+		gameData.currentRound++;
+		gameData.outcome = "It's a Draw";
+		console.log(gameData);
+		// Update screen
+	} else if (
+		// Player win conditions
+		(gameData.playerSelection === 'cockroach' &&
+			gameData.computerSelection === 'nuclear-bomb') ||
+		(gameData.playerSelection === 'nuclear-bomb' &&
+			gameData.computerSelection === 'foot') ||
+		(gameData.playerSelection === 'foot' &&
+			gameData.computerSelection === 'cockroach')
+	) {
+		gameData.playerScore++;
+		gameData.currentRound++;
+		gameData.outcome = 'You win!';
+		console.log(gameData);
+		// Update screen
+	} else if (
+		// Computer win conditions
+		(gameData.computerSelection === 'cockroach' &&
+			gameData.playerSelection === 'nuclear-bomb') ||
+		(gameData.computerSelection === 'nuclear-bomb' &&
+			gameData.playerSelection === 'foot') ||
+		(gameData.computerSelection === 'foot' &&
+			gameData.playerSelection === 'cockroach')
+	) {
+		gameData.computerScore++;
+		gameData.currentRound++;
+		gameData.outcome = 'Computer wins!';
+		console.log(gameData);
+		// Update screen
+	}
+}
 
 // Button click events
 buttons.forEach((button) =>
-	button.addEventListener('click', (e) => getPlayerSelection(e)),
+	button.addEventListener('click', (e) => playRound(e)),
 );
 
 // Game loop
