@@ -95,10 +95,3 @@ function updateScreen() {
 buttons.forEach((button) =>
 	button.addEventListener('click', (e) => playRound(e)),
 );
-
-// Game loop
-function playGame() {
-	updateScreen();
-}
-
-playGame();
