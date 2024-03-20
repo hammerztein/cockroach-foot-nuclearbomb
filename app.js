@@ -23,8 +23,9 @@ function getComputerSelection() {
 function playRound(e) {
 	// Rounds check
 	if (gameData.currentRound === gameData.maxRound) {
-		gameData.outcome += ', Game Over!';
+		gameData.outcome = 'Game Is Over, Start A New Game!';
 		// make game reset button visible
+		updateScreen();
 		return;
 	}
 
@@ -37,7 +38,7 @@ function playRound(e) {
 		gameData.currentRound++;
 		gameData.outcome = "It's a Draw";
 		console.log(gameData);
-		// Update screen
+		updateScreen();
 	} else if (
 		// Player win conditions
 		(gameData.playerSelection === 'cockroach' &&
@@ -51,7 +52,7 @@ function playRound(e) {
 		gameData.currentRound++;
 		gameData.outcome = 'You win!';
 		console.log(gameData);
-		// Update screen
+		updateScreen();
 	} else if (
 		// Computer win conditions
 		(gameData.computerSelection === 'cockroach' &&
@@ -65,8 +66,29 @@ function playRound(e) {
 		gameData.currentRound++;
 		gameData.outcome = 'Computer wins!';
 		console.log(gameData);
-		// Update screen
+		updateScreen();
 	}
+}
+
+// Update game UI
+function updateScreen() {
+	// DOM variables
+	const outcome = document.querySelector('#outcome');
+	const playerSelectionText = document.querySelector('#player-selection');
+	const computerSelectionText = document.querySelector('#ai-selection');
+	const playerScoreText = document.querySelector('#player-score');
+	const computerScoreText = document.querySelector('#ai-score');
+	const progressBar = document.querySelector('#progress-bar');
+
+	// Update the values based on gameData
+	outcome.textContent = gameData.outcome;
+	playerSelectionText.textContent = gameData.playerSelection;
+	computerSelectionText.textContent = gameData.computerSelection;
+	playerScoreText.textContent = gameData.playerScore;
+	computerScoreText.textContent = gameData.computerScore;
+	progressBar.dataset.value = `${gameData.currentRound}/${gameData.maxRound}`;
+	progressBar.value = gameData.currentRound;
+	progressBar.max = gameData.maxRound;
 }
 
 // Button click events
@@ -75,4 +97,8 @@ buttons.forEach((button) =>
 );
 
 // Game loop
-function playGame() {}
+function playGame() {
+	updateScreen();
+}
+
+playGame();
