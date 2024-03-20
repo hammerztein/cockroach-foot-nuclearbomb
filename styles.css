@@ -100,6 +100,17 @@ body {
 	padding: 0 20px;
 }
 
+#restart {
+	display: block;
+	margin: 10px auto;
+	padding: 8px 12px;
+	color: inherit;
+	text-transform: uppercase;
+	background-color: #465a76;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
 #outcome {
 	text-align: center;
 	font-size: 22px;
