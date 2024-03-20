@@ -6,11 +6,12 @@ const gameData = {
 	computerSelection: '',
 	currentRound: 0,
 	maxRound: 5,
-	outcome: 'Play a round!',
+	outcome: 'Select A Hand To Play A Round!',
 };
 
 // Game buttons
 const buttons = document.querySelectorAll('.btn');
+const restart = document.querySelector('#restart');
 
 // Randomly select computer choice
 function getComputerSelection() {
@@ -21,11 +22,8 @@ function getComputerSelection() {
 
 // Play one round of the game
 function playRound(e) {
-	// Rounds check
+	// End game if played max rounds
 	if (gameData.currentRound === gameData.maxRound) {
-		gameData.outcome = 'Game Is Over, Start A New Game!';
-		// make game reset button visible
-		updateScreen();
 		return;
 	}
 
@@ -72,6 +70,16 @@ function playRound(e) {
 
 // Update game UI
 function updateScreen() {
+	// Display the winner of the game
+	if (gameData.currentRound === gameData.maxRound) {
+		gameData.outcome = `Game is over, ${
+			gameData.playerScore > gameData.computerScore
+				? 'You won!'
+				: 'Computer won!'
+		} `;
+		restart.style.display = 'block';
+	}
+
 	// DOM variables
 	const outcome = document.querySelector('#outcome');
 	const playerSelectionText = document.querySelector('#player-selection');
@@ -91,7 +99,26 @@ function updateScreen() {
 	progressBar.max = gameData.maxRound;
 }
 
+// Restart game
+function restartGame() {
+	// Hide button
+	restart.style.display = 'none';
+
+	// Reset values
+	(gameData.playerScore = 0),
+		(gameData.computerScore = 0),
+		(gameData.playerSelection = ''),
+		(gameData.computerSelection = ''),
+		(gameData.currentRound = 0),
+		(gameData.maxRound = 5),
+		(gameData.outcome = 'Select A Hand To Play A Round!'),
+		// Update screen
+		updateScreen();
+}
+
 // Button click events
 buttons.forEach((button) =>
 	button.addEventListener('click', (e) => playRound(e)),
 );
+
+restart.addEventListener('click', restartGame);
