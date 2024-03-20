@@ -90,8 +90,12 @@ function updateScreen() {
 
 	// Update the values based on gameData
 	outcome.textContent = gameData.outcome;
-	playerSelectionText.textContent = gameData.playerSelection;
-	computerSelectionText.textContent = gameData.computerSelection;
+	playerSelectionText.textContent = capitalizeFirstLetter(
+		gameData.playerSelection,
+	);
+	computerSelectionText.textContent = capitalizeFirstLetter(
+		gameData.computerSelection,
+	);
 	playerScoreText.textContent = gameData.playerScore;
 	computerScoreText.textContent = gameData.computerScore;
 	progressBar.dataset.value = `${gameData.currentRound}/${gameData.maxRound}`;
@@ -114,6 +118,13 @@ function restartGame() {
 		(gameData.outcome = 'Select A Hand To Play A Round!'),
 		// Update screen
 		updateScreen();
+}
+
+// Helper function
+function capitalizeFirstLetter(string) {
+	const capitalLetter = string.slice(0, 1).toUpperCase();
+	const removedFirstLetter = string.slice(1);
+	return capitalLetter.concat(removedFirstLetter);
 }
 
 // Button click events
