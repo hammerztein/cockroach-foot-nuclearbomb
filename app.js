@@ -12,6 +12,7 @@ const gameData = {
 // Game buttons
 const buttons = document.querySelectorAll('.btn');
 const restart = document.querySelector('#restart');
+const showRules = document.querySelector('#show-rules');
 
 // Randomly select computer choice
 function getComputerSelection() {
@@ -120,6 +121,13 @@ function restartGame() {
 		updateScreen();
 }
 
+// Display rules paragraph
+function toggleRules() {
+	const rulesText = document.querySelector('#rules');
+	// toggle show class
+	rulesText.classList.toggle('show');
+}
+
 // Helper function
 function capitalizeFirstLetter(string) {
 	const capitalLetter = string.slice(0, 1).toUpperCase();
@@ -133,3 +141,5 @@ buttons.forEach((button) =>
 );
 
 restart.addEventListener('click', restartGame);
+
+showRules.addEventListener('click', toggleRules);
