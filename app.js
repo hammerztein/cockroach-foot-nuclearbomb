@@ -36,7 +36,6 @@ function playRound(e) {
 	if (gameData.playerSelection === gameData.computerSelection) {
 		gameData.currentRound++;
 		gameData.outcome = "It's a Draw";
-		console.log(gameData);
 		updateScreen();
 	} else if (
 		// Player win conditions
@@ -50,7 +49,6 @@ function playRound(e) {
 		gameData.playerScore++;
 		gameData.currentRound++;
 		gameData.outcome = 'You win!';
-		console.log(gameData);
 		updateScreen();
 	} else if (
 		// Computer win conditions
@@ -64,7 +62,6 @@ function playRound(e) {
 		gameData.computerScore++;
 		gameData.currentRound++;
 		gameData.outcome = 'Computer wins!';
-		console.log(gameData);
 		updateScreen();
 	}
 }
