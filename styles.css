@@ -37,12 +37,12 @@ body {
 /* main content */
 
 .container {
-	width: 800px;
+	width: 650px;
 	min-height: 450px;
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
-	padding: 20px;
+	padding: 20px 30px;
 	border: 1px solid #dedede;
 	background-color: #132743;
 	box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
@@ -58,7 +58,6 @@ body {
 
 .heading {
 	text-align: center;
-	padding: 0 20px;
 }
 
 .heading h1 {
@@ -155,6 +154,7 @@ body {
 	flex: 1;
 	font-size: 18px;
 	text-align: center;
+	color: #eee;
 }
 
 .progress label,
@@ -164,7 +164,7 @@ body {
 }
 
 .progress {
-	border-top: 1px inset rgba(255, 255, 255, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 progress {
@@ -188,7 +188,7 @@ progress::after {
 progress::-webkit-progress-bar {
 	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 15px;
-	padding: 5px;
+	padding: 4px;
 }
 
 progress::-webkit-progress-value {
