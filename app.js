@@ -76,6 +76,8 @@ function updateScreen() {
 		gameData.outcome = `Game is over, ${
 			gameData.playerScore > gameData.computerScore
 				? 'You won!'
+				: gameData.playerScore === gameData.computerScore
+				? "It's a Draw!"
 				: 'Computer won!'
 		} `;
 		restart.style.display = 'block';
