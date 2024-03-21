@@ -109,7 +109,9 @@ body {
 /* output */
 
 .output {
-	padding: 0 20px;
+	padding: 8px 20px;
+	background-color: #1f406d;
+	border-radius: 5px;
 }
 
 #restart,
@@ -145,7 +147,7 @@ body {
 .scores {
 	display: flex;
 	align-items: center;
-	margin: 15px 0;
+	margin: 10px 0;
 }
 
 .text,
@@ -158,13 +160,17 @@ body {
 .progress label,
 .progress progress {
 	display: block;
+	margin: 10px auto;
+}
+
+.progress {
+	border-top: 1px inset rgba(255, 255, 255, 0.2);
 }
 
 progress {
-	width: 75%;
+	width: 65%;
 	height: 25px;
-	margin: 10px auto;
-	border-radius: 10px;
+	border-radius: 1px;
 	position: relative;
 }
 
@@ -180,11 +186,12 @@ progress::after {
 }
 
 progress::-webkit-progress-bar {
-	background-color: #1f406d;
-	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	padding: 5px;
 }
 
 progress::-webkit-progress-value {
 	background-color: #3771c2;
-	border-radius: 10px;
+	border-radius: 15px;
 }
