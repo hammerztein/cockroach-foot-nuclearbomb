@@ -26,7 +26,7 @@ img {
 body {
 	line-height: 1.5;
 	height: 100vh;
-	font-family: 'Roboto';
+	font-family: sans-serif;
 	color: #ddd;
 	display: flex;
 	align-items: center;
@@ -143,7 +143,7 @@ body {
 #outcome {
 	text-align: center;
 	font-size: 22px;
-	margin-bottom: 35px;
+	margin-bottom: 10px;
 }
 
 .selection,
@@ -153,8 +153,7 @@ body {
 	margin: 10px 0;
 }
 
-.text,
-.progress label {
+.text {
 	flex: 1;
 	font-size: 18px;
 	text-align: center;
@@ -162,43 +161,4 @@ body {
 
 .text > span {
 	color: #fff;
-}
-
-.progress label,
-.progress progress {
-	display: block;
-	margin: 10px auto;
-}
-
-.progress {
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-progress {
-	width: 65%;
-	height: 25px;
-	border-radius: 1px;
-	position: relative;
-}
-
-progress::after {
-	content: attr(data-value);
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align: center;
-	font-size: 18px;
-}
-
-progress::-webkit-progress-bar {
-	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 15px;
-	padding: 4px;
-}
-
-progress::-webkit-progress-value {
-	background-color: #3771c2;
-	border-radius: 15px;
 }

@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Cockroach - Foot - Nuclear Bomb</title>
-		<link rel="stylesheet" href="./styles.css" />
-		<link rel="shortcut icon" href="./img/fav.ico" type="image/x-icon" />
-	</head>
-	<body>
-		<main class="container">
-			<header class="heading">
-				<h1>
-					<a href="https://www.imdb.com/title/tt0720091/" target="_blank"
-						>Cockroach - Foot - Nuclear Bomb</a
-					>
-				</h1>
-				<p class="info">
-					The classic game of rock-paper-scissors reimagined.
-					<button id="show-rules">Show Rules</button>
-				</p>
-				<p class="info" id="rules">
-					Rules are simple - cockroach survives the nuclear bomb, foot stomps
-					the cockroach and the nuclear bomb annihilates foot.
-				</p>
-			</header>
-			<div class="buttons">
-				<button class="btn" data-value="cockroach">
-					<img
-						src="./img/cockroach.png"
-						alt="An icon of a cockroach pictured in cartoon like style"
-						class="btn-img"
-					/>
-				</button>
-				<button class="btn" data-value="foot">
-					<img
-						src="./img/foot.png"
-						alt="An icon of a bare foot pictured in cartoon like style"
-						class="btn-img"
-					/>
-				</button>
-				<button class="btn" data-value="nuclear-bomb">
-					<img
-						src="./img/nuclear-bomb.png"
-						alt="An icon of a nuclear bomb mushroom cloud pictured in cartoon like style"
-						class="btn-img"
-					/>
-				</button>
-			</div>
-			<section class="output">
-				<h3 id="outcome">Select A Hand To Play A Round!</h3>
-				<button class="hidden" id="restart">Restart Game</button>
-				<div class="selection">
-					<p class="text">You Chose: <span id="player-selection"></span></p>
-					<p class="text">AI Chose: <span id="ai-selection"></span></p>
-				</div>
-				<div class="scores">
-					<p class="text">Player Score: <span id="player-score"></span></p>
-					<p class="text">AI Score: <span id="ai-score"></span></p>
-				</div>
-				<div class="progress">
-					<label for="progress-bar">Games Played</label>
-					<progress
-						id="progress-bar"
-						value="0"
-						max="5"
-						data-value="0/5"
-					></progress>
-				</div>
-			</section>
-		</main>
-		<script src="./app.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cockroach - Foot - Nuclear Bomb</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./img/fav.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="heading">
+        <h1>
+          <a href="https://www.imdb.com/title/tt0720091/" target="_blank"
+            >Cockroach - Foot - Nuclear Bomb</a
+          >
+        </h1>
+        <p class="info">
+          The classic game of rock-paper-scissors reimagined.
+          <button id="show-rules">Show Rules</button>
+        </p>
+        <p class="info" id="rules">
+          Rules are simple - cockroach survives the nuclear bomb, foot stomps
+          the cockroach and the nuclear bomb annihilates foot.
+        </p>
+      </header>
+      <div class="buttons">
+        <button class="btn" data-value="cockroach">
+          <img
+            src="./img/cockroach.png"
+            alt="An icon of a cockroach pictured in cartoon like style"
+            class="btn-img"
+          />
+        </button>
+        <button class="btn" data-value="foot">
+          <img
+            src="./img/foot.png"
+            alt="An icon of a bare foot pictured in cartoon like style"
+            class="btn-img"
+          />
+        </button>
+        <button class="btn" data-value="nuclear-bomb">
+          <img
+            src="./img/nuclear-bomb.png"
+            alt="An icon of a nuclear bomb mushroom cloud pictured in cartoon like style"
+            class="btn-img"
+          />
+        </button>
+      </div>
+      <section class="output">
+        <h3 id="outcome">Select A Hand To Play A Round!</h3>
+        <button class="hidden" id="restart">Restart Game</button>
+        <div class="selection">
+          <p class="text">You Chose: <span id="player-selection"></span></p>
+          <p class="text">AI Chose: <span id="ai-selection"></span></p>
+        </div>
+        <div class="scores">
+          <p class="text">Player Score: <span id="player-score"></span></p>
+          <p class="text">AI Score: <span id="ai-score"></span></p>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
 </html>
