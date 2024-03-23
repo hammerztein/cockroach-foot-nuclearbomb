@@ -4,7 +4,6 @@ const gameData = {
   computerScore: 0,
   playerSelection: '',
   computerSelection: '',
-  gameOver: false,
   outcome: 'Select A Hand To Play A Round!',
 };
 
