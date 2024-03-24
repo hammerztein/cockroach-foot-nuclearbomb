@@ -22,7 +22,7 @@ function getComputerSelection() {
 // Play one round of the game
 function playRound(e) {
   // Disable game logic when either player gets max score
-  if (gameData.playerScore === 5 || gameData.computerScore === 5) {
+  if (gameOver()) {
     return;
   }
 
@@ -33,7 +33,6 @@ function playRound(e) {
   // Draw conditions
   if (gameData.playerSelection === gameData.computerSelection) {
     gameData.outcome = "It's a Draw";
-    updateScreen();
   } else if (
     // Player win conditions
     (gameData.playerSelection === 'cockroach' &&
@@ -45,7 +44,6 @@ function playRound(e) {
   ) {
     gameData.playerScore++;
     gameData.outcome = 'You win!';
-    updateScreen();
   } else if (
     // Computer win conditions
     (gameData.computerSelection === 'cockroach' &&
@@ -57,23 +55,14 @@ function playRound(e) {
   ) {
     gameData.computerScore++;
     gameData.outcome = 'Computer wins!';
-    updateScreen();
   }
+  updateScreen();
 }
 
 // Update game UI
 function updateScreen() {
-  // Display the winner of the game
-  if (gameData.playerScore === 5 || gameData.computerScore === 5) {
-    gameData.outcome = `Game is over, ${
-      gameData.playerScore > gameData.computerScore
-        ? 'You won!'
-        : gameData.playerScore === gameData.computerScore
-        ? "It's a Draw!"
-        : 'Computer won!'
-    } `;
-    restart.style.display = 'block';
-  }
+  // Check if game is over
+  gameOver();
 
   // DOM variables
   const outcome = document.querySelector('#outcome');
@@ -116,6 +105,23 @@ function toggleRules() {
   const rulesText = document.querySelector('#rules');
   // toggle show class
   rulesText.classList.toggle('show');
+}
+
+// Check if game is over
+function gameOver() {
+  if (gameData.playerScore === 5 || gameData.computerScore === 5) {
+    gameData.outcome = `Game is over, ${
+      gameData.playerScore > gameData.computerScore
+        ? 'You won!'
+        : gameData.playerScore === gameData.computerScore
+        ? "It's a Draw!"
+        : 'Computer won!'
+    } `;
+    restart.style.display = 'block';
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Helper function
