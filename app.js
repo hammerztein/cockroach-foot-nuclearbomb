@@ -21,9 +21,8 @@ function getComputerSelection() {
 
 // Play one round of the game
 function playRound(e) {
-  // End game if played max rounds
+  // Disable game logic when either player gets max score
   if (gameData.playerScore === 5 || gameData.computerScore === 5) {
-    updateScreen();
     return;
   }
 
