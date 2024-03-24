@@ -5,24 +5,24 @@ This project is based on a classical "Rock Paper Scissors" game, it was built as
 ## Assignment
 
 - Create "rock paper scissors" game that will be played in the browser console.
-- Create new "feature branch" for implementing game UI. <span style="color: red"> - New</span>
-- Create game UI with clickable buttons for user input and output section for results and scores. <span style="color: red"> - New</span>
-- Merge changes from "feature branch" into main branch. <span style="color: red"> - New</span>
+- Create new "feature branch" for implementing game UI. - `New`
+- Create game UI with clickable buttons for user input and output section for results and scores. `New`
+- Merge changes from "feature branch" into main branch. `New`
 
 ## Things I Used
 
 - Template Literals
 - Conditional Statements (IF ELSE TERNARY)
 - Logical Operators (AND OR)
-- Object Manipulation <span style="color: red"> - New</span>
-- Click Events <span style="color: red"> - New</span>
+- Object Manipulation `New`
+- Click Events `New`
 
 ## What I Learned
 
 - Grouping conditional statements
-- Splitting tasks into functions <span style="color: red"> - New</span>
-- Holding game data in one object <span style="color: red"> - New</span>
-- Smooth CSS transition via max-height property <span style="color: red"> - New</span>
+- Splitting tasks into functions `New`
+- Holding game data in one object `New`
+- Smooth CSS transition via max-height property `New`
 
 ## Acknowledgments
 
