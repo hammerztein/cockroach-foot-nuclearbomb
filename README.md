@@ -9,6 +9,10 @@ This project is based on a classical "Rock Paper Scissors" game, it was built as
 - Create game UI with clickable buttons for user input and output section for results and scores. `New`
 - Merge changes from "feature branch" into main branch. `New`
 
+## Links
+
+[Live Site Preview](https://hammerztein.github.io/cockroach-foot-nuclearbomb/)
+
 ## Things I Used
 
 - Template Literals
